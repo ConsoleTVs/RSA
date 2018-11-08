@@ -1,0 +1,7 @@
+[package]
+name = "rsa_cryptosystem"
+version = "0.1.0"
+authors = ["Erik Campobadal <soc@erik.cat>"]
+
+[dependencies]
+rand = "0.5.5"
