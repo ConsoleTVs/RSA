@@ -1,5 +1,7 @@
 extern crate rand;
+extern crate num;
 use self::rand::{thread_rng, Rng};
+use num::num_integer::gcd;
 
 pub fn is_prime(n: u128) -> bool
 {
@@ -76,4 +78,26 @@ pub fn extended_euclidean_algorithm(a: u128, b: u128, x: &mut u128, y: &mut u128
     *y = *x1 - (a / b) * (*y1);
 
     return gcd;
+}
+
+pub fn generate_e(phi: u128) -> u128
+{
+    e: u128 = random(2, phi - 1);
+
+    while gcd(e, phi) != 1 {
+        e = random(2, phi - 1);
+    }
+
+    return e;
+}
+
+pub fn generate_prime(min: u128) -> u128
+{
+    number: u128 = random(min, 80);
+
+    while !is_prime(number) {
+        number = random(min, 80);
+    }
+
+    return number;
 }

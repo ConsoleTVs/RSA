@@ -14,8 +14,7 @@ static int num_bits(unsigned long long int n){
 static long long int random(unsigned long long int min, unsigned long long int max)
 {
    static bool first = true;
-   if (first)
-   {
+   if (first) {
       srand( time(NULL) ); //seeding for the first time only!
       first = false;
    }

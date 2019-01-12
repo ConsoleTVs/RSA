@@ -49,10 +49,10 @@ int RSA::private_key()
 
 int RSA::encrypt(int m)
 {
-    return fast_modular_exponentiation_algorithm(m % this->key.n, this->key.d, this->key.n);
+    return fast_modular_exponentiation_algorithm(m % this->key.n, this->key.e, this->key.n);
 }
 
 int RSA::decrypt(int s)
 {
-    return fast_modular_exponentiation_algorithm(s, this->key.e, this->key.n);
+    return fast_modular_exponentiation_algorithm(s, this->key.d, this->key.n);
 }

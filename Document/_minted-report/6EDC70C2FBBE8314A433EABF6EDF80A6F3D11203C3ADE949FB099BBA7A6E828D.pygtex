@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{RSA.RSA} \PYG{k+kn}{import} \PYG{n}{RSA}
+
+\PYG{n}{system} \PYG{o}{=} \PYG{n}{RSA}\PYG{p}{()}
+
+\PYG{n}{key} \PYG{o}{=} \PYG{n}{system}\PYG{o}{.}\PYG{n}{generate\PYGZus{}key}\PYG{p}{(}\PYG{l+m+mi}{61}\PYG{p}{,} \PYG{l+m+mi}{53}\PYG{p}{)}
+\PYG{n}{key}\PYG{o}{.}\PYG{k}{print}\PYG{p}{()}
+
+\PYG{n}{message} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}Cryptography\PYGZsq{}}
+\PYG{n}{cipher\PYGZus{}text} \PYG{o}{=} \PYG{n}{system}\PYG{o}{.}\PYG{n}{encrypt}\PYG{p}{(}\PYG{n}{message}\PYG{p}{)}
+\PYG{n}{plain\PYGZus{}text} \PYG{o}{=} \PYG{n}{system}\PYG{o}{.}\PYG{n}{decrypt}\PYG{p}{(}\PYG{n}{cipher\PYGZus{}text}\PYG{p}{)}
+\PYG{k}{print}\PYG{p}{(}\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}Original: \PYGZob{}message\PYGZcb{}\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{print}\PYG{p}{(}\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}Cipher text: \PYGZob{}cipher\PYGZus{}text\PYGZcb{}\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{print}\PYG{p}{(}\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}Plain text: \PYGZob{}plain\PYGZus{}text\PYGZcb{}\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{print}\PYG{p}{(}\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}Correct: \PYGZob{}message == plain\PYGZus{}text\PYGZcb{}\PYGZsq{}}\PYG{p}{)}
+\end{Verbatim}
