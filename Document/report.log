@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.15)  12 JAN 2019 22:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.15)  16 JAN 2019 06:28
 entering extended mode
 **./report.tex
 (report.tex
@@ -1007,7 +1007,7 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 
 
 (portada.tex
-<upc.png, id=46, 2055.68pt x 2055.68pt>
+<upc.png, id=54, 2055.68pt x 2055.68pt>
 File: upc.png Graphic file (type png)
 <use upc.png>
 Package pdftex.def Info: upc.png  used on input line 24.
@@ -1051,17 +1051,17 @@ File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) [4] [5]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--159
+Underfull \hbox (badness 10000) in paragraph at lines 161--164
 
  []
 
 
-Overfull \hbox (17.53291pt too wide) in paragraph at lines 164--177
+Overfull \hbox (17.53291pt too wide) in paragraph at lines 169--182
  [] 
  []
 
@@ -1069,80 +1069,145 @@ Overfull \hbox (17.53291pt too wide) in paragraph at lines 164--177
 
 ] (_minted-report/default-pyg-prefix.pygstyle)
 (_minted-report/default.pygstyle)
-(_minted-report/E89717DE6DD87769AEB85E29270D968CEF34AE1C2BB86D6A2CA89632F15F608
+(_minted-report/3D1E46BDF2E9E9EE9443755F8A339BF556D5462E0777D34BF456483D59F50E0
 A.pygtex
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
  [7] [8])
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
 
-
-Underfull \hbox (badness 1371) in paragraph at lines 196--196
+[9]
+Underfull \hbox (badness 1371) in paragraph at lines 201--201
 []\OT1/cmr/m/n/12 Method to cal-cu-late $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12  
 \OML/cmm/m/it/12 a[]
  []
 
 
-Overfull \hbox (24.1259pt too wide) in paragraph at lines 193--202
+Overfull \hbox (46.93846pt too wide) in paragraph at lines 198--207
  [] 
  []
 
-[9]
-(_minted-report/24AA889B46A6B6B028CDA656A85BC5099AA6E3FBB47E71194870F1C1B380FC9
-C.pygtex [10]) [11]
+
+(_minted-report/C7D36EEBCE44E08FAEE78C5399FA5CC5D3B1213AAA2225BBF5A332302401E50
+A.pygtex [10] [11]) [12]
 Chapter 3.
 
-(_minted-report/6EDC70C2FBBE8314A433EABF6EDF80A6F3D11203C3ADE949FB099BBA7A6E828
-D.pygtex) [12
+(_minted-report/33496FDB52FCC77C13636406A4971BE7F3D11203C3ADE949FB099BBA7A6E828
+D.pygtex [13
 
-]
+])
+<RSA1.png, id=157, 737.00343pt x 384.6872pt>
+File: RSA1.png Graphic file (type png)
+<use RSA1.png>
+Package pdftex.def Info: RSA1.png  used on input line 220.
+(pdftex.def)             Requested size: 426.79134pt x 222.76653pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 220--221
+ [][] 
+ []
+
+[14 <./RSA1.png>]
 Chapter 4.
 
-Overfull \hbox (30.4002pt too wide) in paragraph at lines 215--219
+(_minted-report/DD9596DC8E53A20933373C63ECE4D605CC983ED1F7C391D000FF61C546A26E1
+B.pygtex [15
+
+] [16])
+(_minted-report/07CD2A097F6D99D921DEFE0E60ADA5B5216A6195039B9FDFD7B71F3BFB6AD00
+6.pygtex [17] [18])
+<RSA2.png, id=181, 721.19438pt x 391.4625pt>
+File: RSA2.png Graphic file (type png)
+<use RSA2.png>
+Package pdftex.def Info: RSA2.png  used on input line 255.
+(pdftex.def)             Requested size: 426.79134pt x 231.65973pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 255--256
+ [][] 
+ []
+
+<RSA3.png, id=182, 721.94719pt x 391.4625pt>
+File: RSA3.png Graphic file (type png)
+<use RSA3.png>
+Package pdftex.def Info: RSA3.png  used on input line 261.
+(pdftex.def)             Requested size: 426.79134pt x 231.4208pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 261--262
+ [][] 
+ []
+
+[19 <./RSA2.png>]
+<RSA4.png, id=188, 721.19438pt x 392.96812pt>
+File: RSA4.png Graphic file (type png)
+<use RSA4.png>
+Package pdftex.def Info: RSA4.png  used on input line 267.
+(pdftex.def)             Requested size: 426.79134pt x 232.55072pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 267--268
+ [][] 
+ []
+
+<RSA5.png, id=189, 718.93594pt x 389.95688pt>
+File: RSA5.png Graphic file (type png)
+<use RSA5.png>
+Package pdftex.def Info: RSA5.png  used on input line 273.
+(pdftex.def)             Requested size: 426.79134pt x 231.50061pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 273--274
+ [][] 
+ []
+
+[20 <./RSA3.png> <./RSA4.png>] [21 <./RSA5.png>]
+Chapter 5.
+[22
+
+]
+Chapter 6.
+
+Overfull \hbox (30.4002pt too wide) in paragraph at lines 289--293
 []$\OT1/cmtt/m/n/12 https : / / www . khanacademy . org / computing / computer-
 []science / cryptography /
  []
 
 
-Overfull \hbox (1.3831pt too wide) in paragraph at lines 215--219
+Overfull \hbox (1.3831pt too wide) in paragraph at lines 289--293
 \OT1/cmtt/m/n/12 modarithmetic / a / fast-[]modular-[]exponentiation$[] \OT1/cm
 r/m/n/12 [Ac-cessed 12 Jan. 2019]. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--219
+Underfull \hbox (badness 10000) in paragraph at lines 289--293
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 220--224
+Underfull \hbox (badness 10000) in paragraph at lines 294--298
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--229
+Underfull \hbox (badness 10000) in paragraph at lines 299--303
 
  []
 
-[13
+[23
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 235.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 235.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 309.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 309.
  (report.aux (portada.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 235.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 235.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 309.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 309.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 07F9F70DB9DF301C77B621997282EFCC;609.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 235.
+(rerunfilecheck)             Checksum: AFAF1E6BCAEB0D6DA6277A5172B9BE65;704.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 309.
  ) 
 Here is how much of TeX's memory you used:
- 24810 strings out of 492970
- 491278 string characters out of 3144266
- 626131 words of memory out of 3000000
- 28206 multiletter control sequences out of 15000+200000
+ 24862 strings out of 492970
+ 492495 string characters out of 3144266
+ 626130 words of memory out of 3000000
+ 28230 multiletter control sequences out of 15000+200000
  10590 words of font info for 39 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,10n,71p,939b,757s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1157,9 +1222,9 @@ ublic/amsfonts/cm/cmr6.pfb><E:/LaTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><E
 amsfonts/cm/cmsy6.pfb><E:/LaTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><E:/La
 TeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><E:/LaTeX/fonts/type1/public/amsf
 onts/cm/cmtt12.pfb>
-Output written on report.pdf (14 pages, 229091 bytes).
+Output written on report.pdf (24 pages, 336898 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
- 28 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 276 PDF objects out of 1000 (max. 8388607)
+ 45 named destinations out of 1000 (max. 500000)
+ 139 words of extra memory for PDF output out of 10000 (max. 10000000)
 

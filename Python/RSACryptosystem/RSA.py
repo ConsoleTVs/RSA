@@ -1,5 +1,5 @@
 from functools import reduce
-from RSA.Key import Key
+from RSACryptosystem.Key import Key
 
 class RSA:
 
@@ -26,28 +26,32 @@ class RSA:
         # We multiply the items in the list to get the result and do result mod n.
         return reduce(lambda x, y: x * y, mod_of_powers) % n
 
-    def generate_key(self, p, q):
+    def generate_key(self, p = None, q = None):
         self.key = Key(p, q)
         return self.key
 
-    def encrypt(self, plain_text):
+    def encrypt(self, plain_text, e = None, n = None):
+        if not e: e = self.key.e
+        if not n: n = self.key.n
         if isinstance(plain_text, str):
             result = []
             for letter in plain_text:
-                result.append(self.encrypt(ord(letter)))
+                result.append(self.encrypt(ord(letter), e, n))
         else:
             result = self.__fast_modular_exponentiation(
-                plain_text % self.key.n, self.key.e, self.key.n
+                plain_text % n, e, n
             )
         return result
 
-    def decrypt(self, cipher_text):
+    def decrypt(self, cipher_text, d = None, n = None):
+        if not d: d = self.key.d
+        if not n: n = self.key.n
         if isinstance(cipher_text, list):
             result = ""
             for element in cipher_text:
-                result += chr(self.decrypt(element))
+                result += chr(self.decrypt(element, d, n))
         else:
             result = self.__fast_modular_exponentiation(
-                cipher_text, self.key.d, self.key.n
+                cipher_text, d, n
             )
         return result

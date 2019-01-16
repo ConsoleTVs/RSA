@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{RSACryptosystem} \PYG{k+kn}{import} \PYG{n}{RSA}
+
+\PYG{c+c1}{\PYGZsh{} Initiate the RSA cryptosystem}
+\PYG{n}{system} \PYG{o}{=} \PYG{n}{RSA}\PYG{p}{()}
+
+\PYG{c+c1}{\PYGZsh{} You may also provide two parameters}
+\PYG{c+c1}{\PYGZsh{} p, q to the generate\PYGZus{}key() function.}
+\PYG{n}{key} \PYG{o}{=} \PYG{n}{system}\PYG{o}{.}\PYG{n}{generate\PYGZus{}key}\PYG{p}{()}
+\PYG{c+c1}{\PYGZsh{} This will print to the screen a key representation.}
+\PYG{n}{key}\PYG{o}{.}\PYG{k}{print}\PYG{p}{()}
+\PYG{c+c1}{\PYGZsh{} The message to be encrypted}
+\PYG{n}{message} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}Cryptography\PYGZsq{}}
+\PYG{k}{print}\PYG{p}{(}\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}Original: \PYGZob{}message\PYGZcb{}\PYGZsq{}}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} The resulting cipher text of}
+\PYG{c+c1}{\PYGZsh{} encrypting the original message}
+\PYG{n}{cipher\PYGZus{}text} \PYG{o}{=} \PYG{n}{system}\PYG{o}{.}\PYG{n}{encrypt}\PYG{p}{(}\PYG{n}{message}\PYG{p}{)}
+\PYG{k}{print}\PYG{p}{(}\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}Cipher text: \PYGZob{}cipher\PYGZus{}text\PYGZcb{}\PYGZsq{}}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} The resulting plain text after}
+\PYG{c+c1}{\PYGZsh{} decrypting the cipher text recieved}
+\PYG{n}{plain\PYGZus{}text} \PYG{o}{=} \PYG{n}{system}\PYG{o}{.}\PYG{n}{decrypt}\PYG{p}{(}\PYG{n}{cipher\PYGZus{}text}\PYG{p}{)}
+\PYG{k}{print}\PYG{p}{(}\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}Plain text: \PYGZob{}plain\PYGZus{}text\PYGZcb{}\PYGZsq{}}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} Simple check to see if they match}
+\PYG{k}{print}\PYG{p}{(}\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}Correct: \PYGZob{}message == plain\PYGZus{}text\PYGZcb{}\PYGZsq{}}\PYG{p}{)}
+\end{Verbatim}

@@ -1,5 +1,6 @@
 from random import randint
 from fractions import gcd
+from sympy import isprime, randprime
 
 class Key:
 
@@ -12,7 +13,13 @@ class Key:
     # The e and d used by the key. d == e**-1 mod phi
     e, d = 0, 0
 
-    def __init__(self, p, q):
+    def __init__(self, p = None, q = None):
+        # Determine if p and q are defined.
+        if not p: p = randprime(50, 200)
+        while not q or p == q: q = randprime(50, 200)
+        # Check if p and q are primes
+        if not isprime(p) or not isprime(q):
+            raise Exception("The provided p and q are invalid.")
         # Basic assignments.
         self.p = p
         self.q = q

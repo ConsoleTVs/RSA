@@ -1,0 +1,57 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Copyright (c) 2019 Erik Campobadal Fores \PYGZlt{}soc@erik.cat\PYGZgt{}}
+\PYG{c+c1}{\PYGZsh{} Distributed under the MIT License}
+
+\PYG{k+kn}{from} \PYG{n+nn}{sys} \PYG{k+kn}{import} \PYG{n+nb}{exit}
+\PYG{k+kn}{from} \PYG{n+nn}{socket} \PYG{k+kn}{import} \PYG{n}{socket}\PYG{p}{,} \PYG{n}{SHUT\PYGZus{}RDWR}
+\PYG{k+kn}{from} \PYG{n+nn}{threading} \PYG{k+kn}{import} \PYG{n}{Thread}
+
+\PYG{c+c1}{\PYGZsh{} Start a socket instance}
+\PYG{n}{sk} \PYG{o}{=} \PYG{n}{socket}\PYG{p}{()}
+\PYG{c+c1}{\PYGZsh{} Bind the socket to a given IP and PORT}
+\PYG{n}{sk}\PYG{o}{.}\PYG{n}{bind}\PYG{p}{((}\PYG{l+s+s1}{\PYGZsq{}127.0.0.1\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{8000}\PYG{p}{))}
+\PYG{c+c1}{\PYGZsh{} Start listening for incomming connections}
+\PYG{n}{sk}\PYG{o}{.}\PYG{n}{listen}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} Helper function}
+\PYG{k}{def} \PYG{n+nf}{log}\PYG{p}{(}\PYG{n}{message}\PYG{p}{,} \PYG{n}{arrow} \PYG{o}{=} \PYG{n+nb+bp}{True}\PYG{p}{):}
+    \PYG{k}{print}\PYG{p}{((}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZgt{} \PYGZsq{}} \PYG{k}{if} \PYG{n}{arrow} \PYG{k}{else} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{)} \PYG{o}{+} \PYG{n}{message}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Output a message}
+\PYG{k}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Copyright (c) 2019 Erik Campobadal Fores \PYGZlt{}soc@erik.cat\PYGZgt{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}[Info] Listening on 127.0.0.1:8000\PYGZsq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Stores the current connections.}
+\PYG{n}{connections} \PYG{o}{=} \PYG{p}{[]}
+
+\PYG{k}{def} \PYG{n+nf}{entry}\PYG{p}{(}\PYG{n}{conn}\PYG{p}{,} \PYG{n}{addr}\PYG{p}{):}
+    \PYG{k}{global} \PYG{n}{connections}
+    \PYG{n}{connections}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{conn}\PYG{p}{)}
+    \PYG{n}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}[Connected] \PYGZsq{}} \PYG{o}{+} \PYG{n}{addr}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}:\PYGZsq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{addr}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]))}
+    \PYG{k}{while} \PYG{n+nb+bp}{True}\PYG{p}{:}
+        \PYG{k}{try}\PYG{p}{:}
+            \PYG{n}{data} \PYG{o}{=} \PYG{n}{conn}\PYG{o}{.}\PYG{n}{recv}\PYG{p}{(}\PYG{l+m+mi}{1024}\PYG{p}{)}
+            \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{data}\PYG{p}{:}
+                \PYG{k}{raise} \PYG{n+ne}{Exception}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Client disconnected\PYGZdq{}}\PYG{p}{)}
+            \PYG{n}{msg} \PYG{o}{=} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{addr}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}:\PYGZsq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{addr}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{])} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{} \PYGZhy{} \PYGZsq{}} \PYG{o}{+} \PYG{n}{data}\PYG{o}{.}\PYG{n}{decode}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}}\PYG{p}{)}
+            \PYG{n}{log}\PYG{p}{(}\PYG{n}{msg}\PYG{p}{)}
+            \PYG{k}{for} \PYG{n}{c} \PYG{o+ow}{in} \PYG{n}{connections}\PYG{p}{:}
+                \PYG{k}{if} \PYG{n}{c} \PYG{o}{!=} \PYG{n}{conn}\PYG{p}{:} \PYG{n}{c}\PYG{o}{.}\PYG{n}{send}\PYG{p}{(}\PYG{n+nb}{bytes}\PYG{p}{(}\PYG{n}{msg}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}utf\PYGZhy{}8\PYGZsq{}}\PYG{p}{))}
+        \PYG{k}{except}\PYG{p}{:}
+            \PYG{n}{conn}\PYG{o}{.}\PYG{n}{shutdown}\PYG{p}{(}\PYG{n}{SHUT\PYGZus{}RDWR}\PYG{p}{)}
+            \PYG{n}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}[Disconected] \PYGZsq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{addr}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}:\PYGZsq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{addr}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]))}
+            \PYG{k}{if} \PYG{n}{conn} \PYG{o+ow}{in} \PYG{n}{connections}\PYG{p}{:}
+                \PYG{n}{connections}\PYG{o}{.}\PYG{n}{remove}\PYG{p}{(}\PYG{n}{conn}\PYG{p}{)}
+            \PYG{n+nb}{exit}\PYG{p}{()}
+
+\PYG{c+c1}{\PYGZsh{} Start listening for connections.}
+\PYG{k}{while} \PYG{n+nb+bp}{True}\PYG{p}{:}
+    \PYG{k}{try}\PYG{p}{:}
+        \PYG{n}{conn}\PYG{p}{,} \PYG{n}{addr} \PYG{o}{=} \PYG{n}{sk}\PYG{o}{.}\PYG{n}{accept}\PYG{p}{()}
+        \PYG{n}{thread} \PYG{o}{=} \PYG{n}{Thread}\PYG{p}{(}\PYG{n}{target} \PYG{o}{=} \PYG{n}{entry}\PYG{p}{,} \PYG{n}{kwargs} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}conn\PYGZsq{}}\PYG{p}{:} \PYG{n}{conn}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}addr\PYGZsq{}}\PYG{p}{:} \PYG{n}{addr}\PYG{p}{\PYGZcb{})}
+        \PYG{n}{thread}\PYG{o}{.}\PYG{n}{daemon} \PYG{o}{=} \PYG{n+nb+bp}{True}
+        \PYG{n}{thread}\PYG{o}{.}\PYG{n}{start}\PYG{p}{()}
+    \PYG{k}{except}\PYG{p}{:}
+        \PYG{n}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}[Closing] Aborting sockets...\PYGZsq{}}\PYG{p}{)}
+        \PYG{n}{sk}\PYG{o}{.}\PYG{n}{shutdown}\PYG{p}{(}\PYG{n}{SHUT\PYGZus{}RDWR}\PYG{p}{)}
+        \PYG{n+nb}{exit}\PYG{p}{()}
+\end{Verbatim}
